@@ -4,14 +4,14 @@ from rest_framework.response import Response
 # from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # from .permissions import IsOwnerOrReadOnly
 from .models import Exercise, Subject
-from .serializers import ExerciseSerializer, SubjectSerializer
+from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExerciseSerializer, PopulateSubjectSerializer
 # Create your views here.
 
 class ExerciseListView(APIView):
 
     def get(self, _request):
         exercise = Exercise.objects.all()
-        serializer = ExerciseSerializer(exercise, many=True)
+        serializer = PopulatedExerciseSerializer(exercise, many=True)
         return Response(serializer.data)
 
     def post(self, request):
@@ -41,4 +41,10 @@ class SubjectListView(APIView):
     def get(self, _request):
         subjects = Subject.objects.all()
         serializer = SubjectSerializer(subjects, many=True)
+        return Response(serializer.data)
+
+class SubjectDetailView(APIView):
+    def get(self, _request, pk):
+        subject = Subject.objects.get(pk=pk)
+        serializer = PopulateSubjectSerializer(subject)
         return Response(serializer.data)
