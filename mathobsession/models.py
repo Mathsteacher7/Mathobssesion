@@ -22,7 +22,7 @@ class Exercise(models.Model):
     content = models.CharField(max_length=200)
     level = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)])
     user = models.ForeignKey(User, related_name='exercises', on_delete=models.CASCADE)
-    subjects = models.ManyToManyField(Subject, related_name='exercises', blank=True)
+    subjects = models.ManyToManyField(Subject, related_name='exercises')
     sketch = models.ForeignKey(Sketch, related_name='exericises', blank=True, null=True, on_delete=models.CASCADE)
 
 
