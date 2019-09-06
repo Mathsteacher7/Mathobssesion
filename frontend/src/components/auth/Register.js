@@ -23,7 +23,6 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.state.formData)
     axios.post('/api/register/', this.state.formData)
       .then(res => {
         toast.success(res.data.message)
@@ -33,7 +32,6 @@ class Register extends React.Component {
   }
 
   render() {
-    console.log(this.state.formData)
     return (
       <section className="section">
         <div className="container">
