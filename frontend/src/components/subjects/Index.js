@@ -1,19 +1,16 @@
 import React from 'react'
 import axios from 'axios'
 
-class ExercisesIndex extends React.Component {
+class SubjectsIndex extends React.Component {
 
   constructor(){
     super()
-
-    this.state = {
-
-    }
+    this.state = { }
   }
 
   componentDidMount() {
-    axios.get('/api/exercises/')
-      .then(res => this.setState({data: res.data}))
+    axios.get('/api/subjects/')
+      .then(res => this.setState({subjects: res.data}))
   }
 
   render(){
@@ -22,12 +19,12 @@ class ExercisesIndex extends React.Component {
         <h1>Hello Django!</h1>
         <div className="container">
           <div className="columns is-multiline">
-            {!this.state.data && <h2 className="title is-2">Loading...</h2>}
+            {!this.state.subjects && <h2 className="title is-2">Loading...</h2>}
 
-            {this.state.data && this.state.data.map(exercise =>
-              <div className="column" key={exercise.id}>
+            {this.state.subjects && this.state.subjects.map(subject =>
+              <div className="column" key={subject.id}>
                 <div className="card">
-                  <h2>{exercise.content}</h2>
+                  <h2>{subject.content}</h2>
                 </div>
               </div>
             )}
@@ -39,4 +36,4 @@ class ExercisesIndex extends React.Component {
   }
 }
 
-export default ExercisesIndex
+export default SubjectsIndex
