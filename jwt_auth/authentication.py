@@ -12,10 +12,10 @@ class JWTAuthentication(BasicAuthentication):
         if not header:
             return None # this request is not authenticated.
 
-        if not header.startswith('bearer'):
+        if not header.startswith('Bearer'):
             raise AuthenticationFailed({'message': 'Invalid Authorization header'}) #send a 401 response
 
-        token = header.replace('Bearer', '') #get the token from the header
+        token = header.replace('Bearer ', '') #get the token from the header
 
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])

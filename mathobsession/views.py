@@ -9,6 +9,7 @@ from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExercis
 
 class ExerciseListView(APIView):
 
+
     def get(self, _request):
         exercise = Exercise.objects.all()
         serializer = PopulatedExerciseSerializer(exercise, many=True)

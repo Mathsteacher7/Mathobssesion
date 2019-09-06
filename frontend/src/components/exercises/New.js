@@ -3,6 +3,8 @@ import axios from 'axios'
 import Select from 'react-select'
 import subjects from '../../lists/Subjects'
 import sketches from '../../lists/Sketches'
+import Auth from '../../lib/Auth'
+
 
 class ExerciseNew extends React.Component {
 
@@ -26,8 +28,10 @@ class ExerciseNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-
-    axios.post(('/api/exercises/'), this.state.formData)
+    const token = Auth.getToken()
+    axios.post(('/api/exercises/'), this.state.formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(() => this.props.history.push('/exercises'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
