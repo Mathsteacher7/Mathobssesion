@@ -9,6 +9,7 @@ from .serializers import UserSerializer
 class RegisterView(APIView):
 
     def post(self, request):
+        print(request.data)
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -26,7 +27,6 @@ class LoginView(APIView):
             raise AuthenticationFailed({'message': 'Invalid credentials'})
 
     def post(self, request):
-
         email = request.data.get('email')
         password = request.data.get('password')
 
