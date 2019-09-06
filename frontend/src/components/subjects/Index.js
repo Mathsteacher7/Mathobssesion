@@ -16,7 +16,7 @@ class SubjectsIndex extends React.Component {
   render(){
     return (
       <div className="section">
-        <h1>Hello Django!</h1>
+        <h1 className="title is-2">Subjects</h1>
         <div className="container">
           <div className="columns is-multiline">
             {!this.state.subjects && <h2 className="title is-2">Loading...</h2>}
@@ -24,7 +24,7 @@ class SubjectsIndex extends React.Component {
             {this.state.subjects && this.state.subjects.map(subject =>
               <div className="column" key={subject.id}>
                 <div className="card">
-                  <h2>{subject.content}</h2>
+                  <h2>{subject.name}</h2>
                 </div>
               </div>
             )}
