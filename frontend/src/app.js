@@ -5,8 +5,10 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import 'bulma'
 
-import ExercisesIndex from './components/exercises/index'
+import ExercisesIndex from './components/exercises/Index'
+import ExercisesNew from './components/exercises/New'
 import Home from './pages/home'
+
 
 class App extends React.Component {
 
@@ -16,6 +18,7 @@ class App extends React.Component {
       <HashRouter>
 
         <Switch>
+          <Route path="/exercises/new" component={ExercisesNew} />
           <Route path="/exercises" component={ExercisesIndex} />
 
           <Route path="/" component={Home}/>

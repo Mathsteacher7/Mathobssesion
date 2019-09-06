@@ -1,0 +1,112 @@
+import React from 'react'
+import axios from 'axios'
+import Select from 'react-select'
+import subjects from '../../lists/Subjects'
+import sketches from '../../lists/Sketches'
+
+class ExerciseNew extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {
+      formData: {
+        content: '',
+        level: 1,
+        sketch: ''
+      }
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleChangeNumbers = this.handleChangeNumbers.bind(this)
+    this.handleChangeSubjects = this.handleChangeSubjects.bind(this)
+    this.handleChangeSketch = this.handleChangeSketch.bind(this)
+  }
+
+
+  handleSubmit(e) {
+    e.preventDefault()
+
+    axios.post(('/api/exercises/'), this.state.formData)
+      .then(() => this.props.history.push('/exercises'))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
+  }
+
+  handleChange(e){
+    const formData = { ...this.state.formData, [e.target.name]: e.target.value}
+    this.setState({ formData })
+  }
+
+  handleChangeNumbers(e){ //The sketch and the levels are in numbers in the backend, so I wrote a method that it will handle the change with numbers and not strings
+    console.log(this.state.formData)
+    const formData = { ...this.state.formData, [e.target.name]: +e.target.value}
+    this.setState({ formData })
+  }
+
+
+  handleChangeSketch(e) {
+    const formData = { ...this.state.formData, sketch: e.value}
+    this.setState({ formData })
+  }
+  handleChangeSubjects(selectedTags) {
+    const formData = { ...this.state.formData, subjects: (selectedTags || []).map(option => option.value) }
+    this.setState({ formData })
+  }
+
+
+
+  render(){
+    console.log(this.state.formData)
+    return (
+      <section className="section">
+        <div className="container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <label className="label">Exercise</label>
+              <input
+                className="input"
+                name="content"
+                placeholder="How many sides does a pentagon have?"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="field">
+              <label className="label">Level</label>
+              <select name="level"
+                onChange={this.handleChangeNumbers}>
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+              </select>
+            </div>
+            <div className="field">
+              <label className="label">Add a Sketch</label>
+              <Select
+                name="sketch"
+                options={sketches}
+                onChange={this.handleChangeSketch}
+                className="basic-select"
+                classNamePrefix="select"
+              />
+            </div>
+            <div className="field">
+              <label className="label">subjects</label>
+              <Select
+                isMulti
+                name="subject"
+                options={subjects}
+                onChange={this.handleChangeSubjects}
+                className="basic-select"
+                classNamePrefix="select"
+              />
+            </div>
+            <button className="button">Add your exerices</button>
+          </form>
+
+        </div>
+      </section>
+    )
+  }
+}
+
+export default ExerciseNew
