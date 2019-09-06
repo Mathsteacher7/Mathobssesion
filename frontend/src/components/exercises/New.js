@@ -60,7 +60,6 @@ class ExerciseNew extends React.Component {
 
 
   render(){
-    console.log(this.state.formData)
     return (
       <section className="section">
         <div className="container">

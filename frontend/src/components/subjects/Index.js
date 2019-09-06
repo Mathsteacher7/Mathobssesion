@@ -16,7 +16,6 @@ class SubjectsIndex extends React.Component {
   render(){
     return (
       <div className="section">
-        <h1>Hello Django!</h1>
         <div className="container">
           <div className="columns is-multiline">
             {!this.state.subjects && <h2 className="title is-2">Loading...</h2>}
