@@ -42,12 +42,69 @@
   }
 },
 {
+  "model": "mathobsession.sketch",
+  "pk": 1,
+  "fields": {
+    "name": "Rectangle",
+    "url": "https://i.imgur.com/YRRpYPm.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 2,
+  "fields": {
+    "name": "Square",
+    "url": "https://i.imgur.com/QPWIW9t.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 3,
+  "fields": {
+    "name": "Right Angle Triangle",
+    "url": "https://i.imgur.com/jsnDoV7.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 4,
+  "fields": {
+    "name": "Trapezium",
+    "url": "https://i.imgur.com/2r56ENf.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 5,
+  "fields": {
+    "name": "Equilateral Triangle",
+    "url": "https://i.imgur.com/wwKlcZb.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 6,
+  "fields": {
+    "name": "Circle with radius",
+    "url": "https://i.imgur.com/wMGZK0W.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 7,
+  "fields": {
+    "name": "Axes 5 X 5",
+    "url": "https://i.imgur.com/C4HZ6x9.jpg"
+  }
+},
+{
   "model": "mathobsession.exercise",
   "pk": 1,
   "fields": {
     "content": "4 + 7",
     "level": 3,
-    "user": 1,
+    "user": 5,
+    "sketch": null,
     "subjects": [
       1
     ]
@@ -59,7 +116,8 @@
   "fields": {
     "content": "75 * 34",
     "level": 1,
-    "user": 1,
+    "user": 5,
+    "sketch": null,
     "subjects": [
       1
     ]
@@ -71,7 +129,8 @@
   "fields": {
     "content": "What is the area of a rectangle with a width of 3cm and a height of 5cm?",
     "level": 1,
-    "user": 1,
+    "user": 5,
+    "sketch": null,
     "subjects": [
       3
     ]
@@ -83,7 +142,8 @@
   "fields": {
     "content": "What is the surface area of a cubic with a height of 3 cm, a width of 5 cm and a length of 2cm",
     "level": 2,
-    "user": 1,
+    "user": 6,
+    "sketch": null,
     "subjects": [
       3
     ]
@@ -95,7 +155,8 @@
   "fields": {
     "content": "How much is 5% of 200?",
     "level": 3,
-    "user": 2,
+    "user": 6,
+    "sketch": null,
     "subjects": [
       1,
       4

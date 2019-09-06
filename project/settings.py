@@ -129,5 +129,6 @@ REST_FRAMEWORK = {
         # this adds our custom authentication middleware
         'jwt_auth.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
     ],
 }
