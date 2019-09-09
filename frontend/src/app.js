@@ -9,6 +9,8 @@ import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/SecureRoute'
 
 import SubjectsIndex from './components/subjects/Index'
+import NumberIndex from './components/subjects/Number'
+import ExericesIndex from './components/exercises/Index'
 import ExercisesNew from './components/exercises/New'
 
 import Register from './components/auth/Register'
@@ -28,8 +30,12 @@ class App extends React.Component {
         <ToastContainer position="bottom-right" hideProgressBar={true} />
 
         <Switch>
+
+          <Route path="/subjects/number" component={NumberIndex} />
+
           <SecureRoute path="/exercises/new" component={ExercisesNew} />
           <Route path="/subjects" component={SubjectsIndex} />
+          <Route path="/exercises" component={ExericesIndex} />
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
           <Route path="/" component={Home}/>
