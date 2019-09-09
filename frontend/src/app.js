@@ -30,13 +30,10 @@ class App extends React.Component {
         <ToastContainer position="bottom-right" hideProgressBar={true} />
 
         <Switch>
-<<<<<<< HEAD
-          <Route path="/exercises/new" component={ExercisesNew} />
+
           <Route path="/subjects/number" component={NumberIndex} />
 
-=======
           <SecureRoute path="/exercises/new" component={ExercisesNew} />
->>>>>>> development
           <Route path="/subjects" component={SubjectsIndex} />
           <Route path="/exercises" component={ExericesIndex} />
           <Route path="/register" component={Register}/>
