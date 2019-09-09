@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import CardSubject from './card_subject'
 
 class SubjectsIndex extends React.Component {
 
@@ -23,9 +24,7 @@ class SubjectsIndex extends React.Component {
 
             {this.state.subjects && this.state.subjects.map(subject =>
               <div className="column" key={subject.id}>
-                <div className="card">
-                  <h2>{subject.name}</h2>
-                </div>
+                <CardSubject {...subject} />
               </div>
             )}
 
