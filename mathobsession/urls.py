@@ -11,5 +11,4 @@ urlpatterns = [
     path('subjects/<int:pk>/', SubjectDetailView.as_view()),
     path('exercises/<int:pk>/', ExerciseDetailView.as_view()),
     path('profile/', ProfileView.as_view()),
-    path('profile/<int:pk>/', ProfileView.as_view()),
 ]

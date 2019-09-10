@@ -22,6 +22,7 @@ import ExercisesNew from './components/exercises/New'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import ProfileShow from './components/users/ProfileShow'
+import ProfileEdit from './components/users/ProfileEdit'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './styles.scss'
@@ -49,6 +50,7 @@ class App extends React.Component {
           <Route path="/contactus" component={ContactUs} />
           <Route path="/subjects" component={SubjectsIndex} />
           <Route path="/exercises" component={ExericesIndex} />
+          <Route path="/profile/edit" component={ProfileEdit} />
           <Route path="/profile" component={ProfileShow} />
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
