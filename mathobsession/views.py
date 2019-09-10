@@ -1,11 +1,10 @@
-# from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from jwt_auth.models import User
 from rest_framework.permissions import IsAuthenticated
 # from .permissions import IsOwnerOrReadOnly
-from .models import Exercise, Subject, Sketch
-from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExerciseSerializer, PopulateSubjectSerializer, SketchSerializer, UserSerializer
+from .models import Exercise, Subject, Sketch, Contactus
+from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExerciseSerializer, PopulateSubjectSerializer, SketchSerializer, UserSerializer, ContactUsSerializer
 # Create your views here.
 
 class ExerciseListView(APIView):
@@ -87,4 +86,18 @@ class ProfileView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
+        return Response(serializer.errors, status=422)
+
+class ContactUsView(APIView):
+
+    def get(self, _request):
+        issues = Contactus.objects.all()
+        serializer = ContactUsSerializer(issues, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = ContactUsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
         return Response(serializer.errors, status=422)

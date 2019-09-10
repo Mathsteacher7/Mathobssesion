@@ -70,6 +70,7 @@ class Navbar extends React.Component {
 
             <div className="navbar-start">
               <Link to="/subjects" className="navbar-item">Browse Subjects</Link>
+              <Link to="/exercises" className="navbar-item">All Exercises</Link>
               {Auth.isAuthenticated() && <Link to="/exercises/new" className="navbar-item">Add Exercises</Link>}
             </div>
 
@@ -98,6 +99,7 @@ class Navbar extends React.Component {
                   </div>
                 </div>
               </div>}
+              <Link to="/contactus" className="navbar-item">Contact Us</Link>
             </div>
 
           </div>

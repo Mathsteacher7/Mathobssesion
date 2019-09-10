@@ -4,7 +4,8 @@ import CardExercise from '../exercises/card_exercise'
 
 
 
-class NumberIndex extends React.Component {
+
+class AlgebraIndex extends React.Component {
 
   constructor(){
     super()
@@ -18,7 +19,7 @@ class NumberIndex extends React.Component {
 
   componentDidMount() {
     axios.get('/api/exercises/')
-      .then(res => this.setState({ data: res.data.filter(n => n.subjects.map(s => s.name).includes('Number')) }))
+      .then(res => this.setState({ data: res.data.filter(n => n.subjects.map(s => s.name).includes('Algebra')) }))
   }
 
 
@@ -43,4 +44,4 @@ class NumberIndex extends React.Component {
   }
 }
 
-export default NumberIndex
+export default AlgebraIndex

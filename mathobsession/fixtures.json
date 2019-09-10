@@ -3,42 +3,54 @@
   "model": "mathobsession.subject",
   "pk": 1,
   "fields": {
-    "name": "Number"
+    "name": "Number",
+    "image": "https://i.imgur.com/BDjgnrQ.png",
+    "icon": ""
   }
 },
 {
   "model": "mathobsession.subject",
   "pk": 2,
   "fields": {
-    "name": "Algebra"
+    "name": "Algebra",
+    "image": "https://i.imgur.com/tpZL5wc.png",
+    "icon": ""
   }
 },
 {
   "model": "mathobsession.subject",
   "pk": 3,
   "fields": {
-    "name": "Ratio and Proportion"
+    "name": "Ratio and Proportion",
+    "image": "https://i.imgur.com/seph6ab.png",
+    "icon": ""
   }
 },
 {
   "model": "mathobsession.subject",
   "pk": 4,
   "fields": {
-    "name": "Geometry and Measures"
+    "name": "Geometry and Measures",
+    "image": "https://i.imgur.com/wZkMvs1.png",
+    "icon": ""
   }
 },
 {
   "model": "mathobsession.subject",
   "pk": 5,
   "fields": {
-    "name": "Probability"
+    "name": "Probability",
+    "image": "https://i.imgur.com/zXEqlLd.png",
+    "icon": ""
   }
 },
 {
   "model": "mathobsession.subject",
   "pk": 6,
   "fields": {
-    "name": "Statistics"
+    "name": "Statistics",
+    "image": "https://i.imgur.com/FDMLdeG.png",
+    "icon": ""
   }
 },
 {

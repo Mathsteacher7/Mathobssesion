@@ -18,8 +18,8 @@ class SubjectsIndex extends React.Component {
   render(){
     return (
       <div className="section">
-        <h1 className="title is-2">Subjects</h1>
         <div className="container">
+          <h1 className="title is-2">Subjects</h1>
           <div className="columns is-multiline">
             {!this.state.subjects && <h2 className="title is-2">Loading...</h2>}
 

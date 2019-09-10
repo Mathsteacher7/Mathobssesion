@@ -1,6 +1,6 @@
 from django.db import models
-from jwt_auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
+from jwt_auth.models import User
 
 # Create your models here.
 class Subject(models.Model):
@@ -30,3 +30,9 @@ class Exercise(models.Model):
 
     def __str__(self):
         return f'{self.content} level {self.level}'
+
+class Contactus(models.Model):
+    full_name = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    content = models.CharField(max_length=300)
+    email = models.CharField(max_length=50)
