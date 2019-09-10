@@ -59,8 +59,6 @@ class ExercisesIndex extends React.Component {
                       defaultValue= {subjectList[0]}
                       onChange={selected => this.handleSelectChange(selected, 'subject')}
                       value={subjectList.find(option => option.label === this.state.subject)}>
-
-
                     </Select>
                   </div>
                 </div>

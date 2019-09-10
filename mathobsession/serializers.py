@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from jwt_auth.serializers import UserSerializer
-from .models import Exercise, Subject, Sketch
+from .models import Exercise, Subject, Sketch, Contactus
 
 class ExerciseSerializer(serializers.ModelSerializer):
 
@@ -35,3 +35,9 @@ class PopulateSubjectSerializer(SubjectSerializer):
     exercises = ExerciseSerializer(many=True)
     class Meta(SubjectSerializer.Meta):
         fields = ('id', 'name', 'exercises')
+
+class ContactUsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contactus
+        fields = ('id', 'full_name', 'title', 'content', 'email')

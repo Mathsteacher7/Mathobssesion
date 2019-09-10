@@ -5,6 +5,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
 import Home from './pages/home'
+import ContactUs from './pages/ContactUs'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/SecureRoute'
 
@@ -39,12 +40,13 @@ class App extends React.Component {
 
           <Route path="/subjects/number" component={NumberIndex} />
           <Route path="/subjects/algebra" component={AlgebraIndex} />
-          <Route path="/subjects/ratioandproportion" component={RatioAndProportionIndex} />
-          <Route path="/subjects/geometryandmeasures" component={GeometryAndMeasuresIndex} />
+          <Route path="/subjects/Ratio and Proportion" component={RatioAndProportionIndex} />
+          <Route path="/subjects/Geometry and Measures" component={GeometryAndMeasuresIndex} />
           <Route path="/subjects/Probability" component={ProbabilityIndex} />
           <Route path="/subjects/Statistics" component={StatisticsIndex} />
 
           <SecureRoute path="/exercises/new" component={ExercisesNew} />
+          <Route path="/contactus" component={ContactUs} />
           <Route path="/subjects" component={SubjectsIndex} />
           <Route path="/exercises" component={ExericesIndex} />
           <Route path="/profiles" component={UserShow} />
