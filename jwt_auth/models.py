@@ -5,8 +5,5 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     # custom fields here...
     image = models.CharField(max_length=200)
-    name = models.CharField(max_length=200)
-    surname = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f'{self.name} level {self.surname}'
+    type = models.CharField(max_length=20)
+    area = models.CharField(max_length=20)

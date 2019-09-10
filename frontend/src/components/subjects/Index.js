@@ -16,7 +16,6 @@ class SubjectsIndex extends React.Component {
   }
 
   render(){
-    console.log(this.state.subjects)
     return (
       <div className="section">
         <h1 className="title is-2">Subjects</h1>

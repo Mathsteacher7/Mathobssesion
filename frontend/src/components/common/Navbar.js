@@ -11,15 +11,18 @@ class Navbar extends React.Component {
     super()
 
     this.state = {
-      navbarOpen: false
+      navbarOpen: false,
+      dropdownOpen: false
     }
 
-    this.toggleNavbar = this.toggleNavbar.bind(this)
     this.logout = this.logout.bind(this)
+    this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.toggleDropdown = this.toggleDropdown.bind(this)
   }
 
   logout() {
     Auth.removeToken()
+    Auth.removeUser()
     this.props.history.push('/')
   }
 
@@ -27,9 +30,16 @@ class Navbar extends React.Component {
     this.setState({ navbarOpen: !this.state.navbarOpen })
   }
 
+  toggleDropdown() {
+    this.setState({ dropdownOpen: !this.state.dropdownOpen})
+  }
+
   componentDidUpdate(prevProps) {
     if(prevProps.location.pathname !== this.props.location.pathname) {
-      this.setState({ navbarOpen: false })
+      this.setState({
+        navbarOpen: false,
+        dropdownOpen: false
+      })
     }
   }
 
@@ -66,7 +76,28 @@ class Navbar extends React.Component {
             <div className="navbar-end">
               {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
-              {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
+              {Auth.isAuthenticated() && <div className="navbar-item">
+                <div className={`dropdown is-right ${this.state.dropdownOpen ? 'is-active' : ''}`}>
+                  <div className="dropdown-trigger">
+                    <button className="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.toggleDropdown}>
+                      <img
+                        src={`${Auth.getUserImage()}`}
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+                  <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content">
+                      <Link to={'/profile'} className="dropdown-item">
+                      My Profile
+                      </Link>
+                      <a className="dropdown-item"  onClick={this.logout}>
+                      Logout
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>}
             </div>
 
           </div>

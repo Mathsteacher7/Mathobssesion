@@ -5,16 +5,40 @@ class Auth {
     localStorage.setItem('token', token)
   }
 
+  static setUser(user) {
+    localStorage.setItem('user', user)
+  }
+
+  static setUserImage(image) {
+    localStorage.setItem('image', image)
+  }
+
   static getToken() {
     return localStorage.getItem('token')
+  }
+
+  static getUserImage() {
+    return localStorage.getItem('image')
   }
 
   static removeToken() {
     localStorage.removeItem('token')
   }
 
+  static removeUser() {
+    localStorage.removeItem('user')
+  }
+
+  static removeUserImage() {
+    localStorage.removeItem('image')
+  }
+
   static getPayload() {
     return jwt.decode(this.getToken())
+  }
+
+  static getUser() {
+    return JSON.parse(localStorage.getItem('user'))
   }
 
   static isAuthenticated() {

@@ -6,7 +6,7 @@ const CardSubject = ({ name, image }) => {
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src={image} alt="Algebra book page"/>
+          <img src={image} alt={name}/>
         </figure>
         <hr/>
       </div>

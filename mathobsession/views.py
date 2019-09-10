@@ -73,10 +73,18 @@ class SketchDetailView(APIView):
         return Response(serializer.data)
 
 
-class ProfilelView(APIView):
+class ProfileView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         serializer = UserSerializer(request.user)
         return Response(serializer.data)
+
+    def put(self, request, pk):
+        user = User.objects.get(pk=pk)
+        serializer = UserSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=422)
