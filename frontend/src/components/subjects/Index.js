@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import CardSubject from './card_subject'
+import { Link } from 'react-router-dom'
 
 class SubjectsIndex extends React.Component {
 
@@ -15,6 +16,7 @@ class SubjectsIndex extends React.Component {
   }
 
   render(){
+    console.log(this.state.subjects)
     return (
       <div className="section">
         <h1 className="title is-2">Subjects</h1>
@@ -24,7 +26,9 @@ class SubjectsIndex extends React.Component {
 
             {this.state.subjects && this.state.subjects.map(subject =>
               <div className="column" key={subject.id}>
-                <CardSubject {...subject} />
+                <Link to={`/subjects/${subject.name}`}>
+                  <CardSubject {...subject} />
+                </Link>
               </div>
             )}
 

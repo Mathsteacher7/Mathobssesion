@@ -15,6 +15,7 @@ import ExercisesNew from './components/exercises/New'
 
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import UserShow from './components/users/UserShow'
 
 import 'react-toastify/dist/ReactToastify.css'
 import './styles.scss'
@@ -36,6 +37,7 @@ class App extends React.Component {
           <SecureRoute path="/exercises/new" component={ExercisesNew} />
           <Route path="/subjects" component={SubjectsIndex} />
           <Route path="/exercises" component={ExericesIndex} />
+          <Route path="/profiles" component={UserShow} />
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
           <Route path="/" component={Home}/>
