@@ -14,7 +14,7 @@ class SubjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subject
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'image')
 
 class SketchSerializer(serializers.ModelSerializer):
 
