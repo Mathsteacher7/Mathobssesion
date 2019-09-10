@@ -1,6 +1,7 @@
 import React from 'react'
+import StarRatings from 'react-star-ratings'
 
-const CardExercise = ({ content, level, sketch, subjects }) => {
+const CardExercise = ({ content, level, sketch, subjects, size }) => {
 
 
   return(
@@ -14,7 +15,29 @@ const CardExercise = ({ content, level, sketch, subjects }) => {
         </figure>}
       </div>
       <div className="card-footer">
-        <div className="card-footer-item">{level}</div>
+        <div className="card-footer-item">
+          {level === 1 && <StarRatings
+            rating={level}
+            starDimension={size || '20px'}
+            starSpacing="5px"
+            starRatedColor="green"
+            numberOfStars={3}
+          />}
+          {level === 2 && <StarRatings
+            rating={level}
+            starDimension={size || '20px'}
+            starSpacing="5px"
+            starRatedColor="yellow"
+            numberOfStars={3}
+          />}
+          {level === 3 && <StarRatings
+            rating={level}
+            starDimension={size || '20px'}
+            starSpacing="5px"
+            starRatedColor="red"
+            numberOfStars={3}
+          />}
+        </div>
         <div className="card-footer-item">{subjects.map( s => <h3 key={s.id}>{s.name}</h3>)}</div>
       </div>
     </div>
