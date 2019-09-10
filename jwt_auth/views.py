@@ -1,11 +1,11 @@
 import datetime
-from django.contrib.auth.models import User
 from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 import jwt
 from .serializers import UserSerializer
+from .models import User
 
 class RegisterView(APIView):
 

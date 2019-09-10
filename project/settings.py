@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'jwt_auth',
     'mathobsession',
 ]
 
@@ -119,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         # this allows us to send dictionaries in our response
@@ -132,3 +134,5 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.SessionAuthentication',
     ],
 }
+
+AUTH_USER_MODEL = 'jwt_auth.User'

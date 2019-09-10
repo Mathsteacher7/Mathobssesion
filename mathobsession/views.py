@@ -1,10 +1,11 @@
 # from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-# from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from jwt_auth.models import User
+from rest_framework.permissions import IsAuthenticated
 # from .permissions import IsOwnerOrReadOnly
 from .models import Exercise, Subject, Sketch
-from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExerciseSerializer, PopulateSubjectSerializer, SketchSerializer
+from .serializers import ExerciseSerializer, SubjectSerializer, PopulatedExerciseSerializer, PopulateSubjectSerializer, SketchSerializer, UserSerializer
 # Create your views here.
 
 class ExerciseListView(APIView):
@@ -69,4 +70,13 @@ class SketchDetailView(APIView):
     def get(self, _request, pk):
         sketch = Sketch.objects.get(pk=pk)
         serializer = SketchSerializer(sketch)
+        return Response(serializer.data)
+
+
+class ProfilelView(APIView):
+
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
         return Response(serializer.data)
