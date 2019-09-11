@@ -24,9 +24,8 @@ class Exercise(models.Model):
     level = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)])
     user = models.ForeignKey(User, related_name='exercises', on_delete=models.CASCADE)
     subjects = models.ManyToManyField(Subject, related_name='exercises')
-    sketch = models.ForeignKey(Sketch, related_name='exericises', blank=True, null=True, on_delete=models.CASCADE)
-
-
+    sketch = models.ForeignKey(Sketch, related_name='exercises', blank=True, null=True, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='user')
 
     def __str__(self):
         return f'{self.content} level {self.level}'

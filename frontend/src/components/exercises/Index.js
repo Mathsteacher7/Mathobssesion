@@ -70,7 +70,7 @@ class ExercisesIndex extends React.Component {
                   <div className="card">
                     <h2>{exercise.content}</h2>
                     <hr/>
-                    <div>{exercise.subjects.map(subject => <h3 key={subject.name}>{subject.name}</h3>)}</div>
+                    <div>{exercise.subjects.map(subject => <div className="icon" key={subject.id} id={subject.name.replace(/\s/g, '')}/>)}</div>
                   </div>
                   <div className="column">
                     {exercise.sketch && <figure className="image">
