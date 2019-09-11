@@ -1,6 +1,5 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from jwt_auth.models import User
 from rest_framework.permissions import IsAuthenticated
 # from .permissions import IsOwnerOrReadOnly
 from .models import Exercise, Subject, Sketch, Contactus
