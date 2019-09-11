@@ -27,7 +27,7 @@ const CardExercise = ({ content, level, sketch, subjects, size }) => {
             rating={level}
             starDimension={size || '20px'}
             starSpacing="5px"
-            starRatedColor="yellow"
+            starRatedColor="#FFBF00"
             numberOfStars={3}
           />}
           {level === 3 && <StarRatings

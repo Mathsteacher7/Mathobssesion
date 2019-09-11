@@ -14,7 +14,8 @@ const Home = () => {
               </figure>
             </div>
             <div className="column">
-              <h2 className="subtitle">Teacher's best friend</h2>
+              <h2 className="title is-2">Teacher's best friend</h2>
+              <p className="subtitle">Mathobsession is a unqiue website, where teachers can upload exercises and share them with other teachers. We want to give free access to teachers all accros the county to better exercises. <br/> Feel free to add your favorite exercises, so together we will create the best database of exercises in the whole world.</p>
             </div>
           </div>
         </div>
