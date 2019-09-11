@@ -38,7 +38,7 @@ const CardExercise = ({ content, level, sketch, subjects, size }) => {
             numberOfStars={3}
           />}
         </div>
-        <div className="card-footer-item">{subjects.map( s => <h3 key={s.id}>{s.name}</h3>)}</div>
+        <div className="card-footer-item">{subjects.map(subject => <div className="icon" key={subject.id} id={subject.name.replace(/\s/g, '')}/> )} </div>
       </div>
     </div>
   )
