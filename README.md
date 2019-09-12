@@ -49,12 +49,19 @@ Mathobsession is a virtual community where teachers can find and share exercises
 
 We drafted the following pages for MVP:
 * Home
-*
+* All Subjects list
+* All Exercises with filter
+* Exercises per Subject  
+* Add Exercise
+* Login
+* Register
+* Profile
+* Profile Edit
 
 ![My First Board (1)](https://user-images.githubusercontent.com/49660544/64786319-178ce180-d566-11e9-8a59-ba9819142eb2.jpg)
 
-
 * **Database Relationships** We drew the Database relationships, as shown below. The MVP consisted of User, Exercise and Subject. Comments and Sub-subjects were extra features should time allowed. 
+
 ![My First Board](https://user-images.githubusercontent.com/49660544/64784841-f2e33a80-d562-11e9-9ff7-2f2c7f46bb56.jpg)
 
 * **Project set-up**
