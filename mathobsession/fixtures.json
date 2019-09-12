@@ -1,0 +1,370 @@
+[
+{
+  "model": "mathobsession.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Number",
+    "image": "https://i.imgur.com/BDjgnrQ.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.subject",
+  "pk": 2,
+  "fields": {
+    "name": "Algebra",
+    "image": "https://i.imgur.com/tpZL5wc.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.subject",
+  "pk": 3,
+  "fields": {
+    "name": "Ratio and Proportion",
+    "image": "https://i.imgur.com/seph6ab.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.subject",
+  "pk": 4,
+  "fields": {
+    "name": "Geometry and Measures",
+    "image": "https://i.imgur.com/wZkMvs1.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.subject",
+  "pk": 5,
+  "fields": {
+    "name": "Probability",
+    "image": "https://i.imgur.com/zXEqlLd.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.subject",
+  "pk": 6,
+  "fields": {
+    "name": "Statistics",
+    "image": "https://i.imgur.com/FDMLdeG.png",
+    "icon": ""
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 1,
+  "fields": {
+    "name": "Rectangle",
+    "url": "https://i.imgur.com/YRRpYPm.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 2,
+  "fields": {
+    "name": "Square",
+    "url": "https://i.imgur.com/QPWIW9t.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 3,
+  "fields": {
+    "name": "Right Angle Triangle",
+    "url": "https://i.imgur.com/jsnDoV7.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 4,
+  "fields": {
+    "name": "Trapezium",
+    "url": "https://i.imgur.com/2r56ENf.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 5,
+  "fields": {
+    "name": "Equilateral Triangle",
+    "url": "https://i.imgur.com/wwKlcZb.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 6,
+  "fields": {
+    "name": "Circle with radius",
+    "url": "https://i.imgur.com/wMGZK0W.png"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 7,
+  "fields": {
+    "name": "Axes 5 X 5",
+    "url": "https://i.imgur.com/C4HZ6x9.jpg"
+  }
+},
+{
+  "model": "mathobsession.sketch",
+  "pk": 8,
+  "fields": {
+    "name": "A Cuboid",
+    "url": "https://i.imgur.com/bWfuxjm.png"
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 1,
+  "fields": {
+    "content": "4 + 7 =",
+    "level": 1,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 2,
+  "fields": {
+    "content": "75 X 34 =",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 3,
+  "fields": {
+    "content": "What is the area of a rectangle with a width of 3cm and a height of 5cm?",
+    "level": 1,
+    "user": 1,
+    "sketch": 1,
+    "subjects": [
+      4
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 4,
+  "fields": {
+    "content": "What is the surface area of a cuboid with a height of 3 cm, a width of 5 cm and a length of 2cm?",
+    "level": 2,
+    "user": 1,
+    "sketch": 8,
+    "subjects": [
+      4
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 5,
+  "fields": {
+    "content": "How much is 5% of 200?",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 6,
+  "fields": {
+    "content": "Write the following numbers in order of size. \r\n                                  -6, 6, -5, 0, 12  \r\nStart with the smallest number.",
+    "level": 1,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 7,
+  "fields": {
+    "content": "From the list of four fractions : \r\n4/16, 2/8, 15/60,  3/9. \r\nWhich is not equal to 1/4?",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 8,
+  "fields": {
+    "content": "Simplify 3 X 2t =",
+    "level": 1,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      2
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 9,
+  "fields": {
+    "content": "Simplify 8a \u2013 3a + 2a =",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      2
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 10,
+  "fields": {
+    "content": "What is the name of the line that connects the centre of a circle to the circle line?",
+    "level": 1,
+    "user": 1,
+    "sketch": 6,
+    "subjects": [
+      4
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 11,
+  "fields": {
+    "content": "Tim and three friends go on holiday together for a week.  The 4 friends will share the costs of the holiday equally.  Here are the costs of the holiday.\r\n\u00a31280 for 4 return plane tickets \r\n\u00a3640 for the villa\r\n\u00a3220 for hire of a car for the week\r\nWork out how much Tim has to pay for his share of the costs.",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 12,
+  "fields": {
+    "content": "True or false?\r\nAll prime numbers are odd.",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 13,
+  "fields": {
+    "content": "Write down an example to show that each of the following two statements is not correct.\r\n (a) The factors of an even number are always even.\r\n (b) All the digits in odd numbers are odd.",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 14,
+  "fields": {
+    "content": "Gavin, Harry and Isabel each earn the same monthly salary.\r\n Each month,\r\n Gavin saves\u0015\u001b\b28% of his salary and spends the rest of his salary\r\n Harry spends 3/4 of his salary and saves the rest of his salary\r\n The amount of salary Isabel saves : The amount of salary she spends = 3 : 7\r\n Work out who saves the most of their salary each month.\r\n You must show how you get your answer.",
+    "level": 3,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 15,
+  "fields": {
+    "content": "Work out 15% of 160 grams.",
+    "level": 1,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      1
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 16,
+  "fields": {
+    "content": "P = 4x + 3y\r\nx \u0018\r\ny = \u2013 2\r\n \r\n(a) Work out the value of P.\r\n\r\n (b) Expand 4e(e + 2) =\r\n\r\n (c) Solve 3(m - 4) = 21",
+    "level": 2,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      2
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 17,
+  "fields": {
+    "content": "There are some chocolates in a box.\r\n1/4  of the chocolates contain nuts.\r\n The rest of the chocolates do not contain nuts.\r\n Write down the ratio of the number of chocolates that contain nuts to the number of\r\nchocolates that do not contain nuts.\r\n\r\nGive your answer in the form 1 : n",
+    "level": 3,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      3
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 18,
+  "fields": {
+    "content": "I roll two dice. \r\na) What is the probability the sum will be an odd number?\r\nb) What is the probability the sum will be an even number?\r\nc) Jean and Rebeca play a game where Rebeca gains 1 point if the sum of the dice is even and Jean gains a point when the sum is odd. Is the game fair?",
+    "level": 3,
+    "user": 1,
+    "sketch": null,
+    "subjects": [
+      5
+    ]
+  }
+},
+{
+  "model": "mathobsession.exercise",
+  "pk": 19,
+  "fields": {
+    "content": "On the grid below, draw the graph of y \u0014= 1 - 3x",
+    "level": 2,
+    "user": 1,
+    "sketch": 7,
+    "subjects": [
+      2
+    ]
+  }
+}
+]
