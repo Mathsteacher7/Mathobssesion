@@ -62,50 +62,57 @@ class ExerciseNew extends React.Component {
   render(){
     return (
       <section className="section">
-        <div className="container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Exercise</label>
-              <input
-                className="input"
-                name="content"
-                placeholder="How many sides does a pentagon have?"
-                onChange={this.handleChange}
-              />
+        <div className="hero">
+          <div className="column is-half is-offset-one-quarter">
+            <div className="hero-body">
+              <form onSubmit={this.handleSubmit}>
+                <div className="field">
+                  <label className="label">Exercise</label>
+                  <input
+                    className="textarea"
+                    name="content"
+                    placeholder="How many sides does a pentagon have?"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Level</label>
+                  <div className="field">
+                    <div className="control">
+                      <select className="select" name="level"
+                        onChange={this.handleChangeNumbers}>
+                        <option value="1">Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Hard</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Add a Sketch</label>
+                  <Select
+                    name="sketch"
+                    options={sketches}
+                    onChange={this.handleChangeSketch}
+                    className="basic-select"
+                    classNamePrefix="select"
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Subjects</label>
+                  <Select
+                    isMulti
+                    name="subject"
+                    options={subjects}
+                    onChange={this.handleChangeSubjects}
+                    className="basic-select"
+                    classNamePrefix="select"
+                  />
+                </div>
+                <button className="button">Save</button>
+              </form>
             </div>
-            <div className="field">
-              <label className="label">Level</label>
-              <select name="level"
-                onChange={this.handleChangeNumbers}>
-                <option value="1">Easy</option>
-                <option value="2">Medium</option>
-                <option value="3">Hard</option>
-              </select>
-            </div>
-            <div className="field">
-              <label className="label">Add a Sketch</label>
-              <Select
-                name="sketch"
-                options={sketches}
-                onChange={this.handleChangeSketch}
-                className="basic-select"
-                classNamePrefix="select"
-              />
-            </div>
-            <div className="field">
-              <label className="label">subjects</label>
-              <Select
-                isMulti
-                name="subject"
-                options={subjects}
-                onChange={this.handleChangeSubjects}
-                className="basic-select"
-                classNamePrefix="select"
-              />
-            </div>
-            <button className="button">Add your exerices</button>
-          </form>
-
+          </div>
         </div>
       </section>
     )

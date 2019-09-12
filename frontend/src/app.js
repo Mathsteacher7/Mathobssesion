@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify'
 import Home from './pages/home'
 import ContactUs from './pages/ContactUs'
 import Navbar from './components/common/Navbar'
+import Footer from './components/common/Footer'
 import SecureRoute from './components/common/SecureRoute'
 
 import SubjectsIndex from './components/subjects/Index'
@@ -56,7 +57,7 @@ class App extends React.Component {
           <Route path="/login" component={Login}/>
           <Route path="/" component={Home}/>
         </Switch>
-
+        <Footer />
       </HashRouter>
     )
   }

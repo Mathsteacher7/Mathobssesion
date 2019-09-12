@@ -79,122 +79,124 @@ class Register extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Name</label>
-              <div className="control">
-                <input
-                  className="input"
-                  name="first_name"
-                  placeholder="eg: Miguel"
-                  onChange={this.handleChange}
-                />
+          <div className="column is-half is-offset-one-quarter">
+            <form onSubmit={this.handleSubmit}>
+              <div className="field">
+                <label className="label">Name</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="first_name"
+                    placeholder="eg: Miguel"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.name && <small className="help">{this.state.errors.name}</small>}
               </div>
-              {this.state.errors.name && <small className="help">{this.state.errors.name}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Surname</label>
-              <div className="control">
-                <input
-                  className="input"
-                  name="last_name"
-                  placeholder="eg: Angelo"
-                  onChange={this.handleChange}
-                />
+              <div className="field">
+                <label className="label">Surname</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="last_name"
+                    placeholder="eg: Angelo"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.surname && <small className="help">{this.state.errors.surname}</small>}
               </div>
-              {this.state.errors.surname && <small className="help">{this.state.errors.surname}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Username</label>
-              <div className="control">
-                <input
-                  className="input"
-                  name="username"
-                  placeholder="eg: MathsTeacher"
-                  onChange={this.handleChange}
-                />
+              <div className="field">
+                <label className="label">Username</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="username"
+                    placeholder="eg: MathsTeacher"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.username && <small className="help">{this.state.errors.username}</small>}
               </div>
-              {this.state.errors.username && <small className="help">{this.state.errors.username}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="email"
-                  name="email"
-                  placeholder="eg: MathsTeacher@ga.com"
-                  onChange={this.handleChange}
-                />
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="email"
+                    name="email"
+                    placeholder="eg: MathsTeacher@ga.com"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
               </div>
-              {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Type</label>
-              <Select
-                name="type"
-                options={typeOptions}
-                onChange={this.handleChangeMulti}
-              />
-              {this.state.errors.type && <small className="help">{this.state.errors.type}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Area</label>
-              <Select
-                name="area"
-                options={areaOptions}
-                onChange={this.handleChangeMulti}
-              />
-              {this.state.errors.username && <small className="help">{this.state.errors.username}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  placeholder="eg: ••••••••"
-                  onChange={this.handleChange}
+              <div className="field">
+                <label className="label">Type</label>
+                <Select
+                  name="type"
+                  options={typeOptions}
+                  onChange={this.handleChangeMulti}
                 />
+                {this.state.errors.type && <small className="help">{this.state.errors.type}</small>}
               </div>
-              {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Password Confirmation</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  name="password_confirmation"
-                  placeholder="eg: ••••••••"
-                  onChange={this.handleChange}
+              <div className="field">
+                <label className="label">Area</label>
+                <Select
+                  name="area"
+                  options={areaOptions}
+                  onChange={this.handleChangeMulti}
                 />
+                {this.state.errors.username && <small className="help">{this.state.errors.username}</small>}
               </div>
-              {this.state.errors.password_confirmation && <small className="help is-danger">{this.state.errors.password_confirmation}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Image</label>
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    placeholder="eg: ••••••••"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
+              </div>
+              <div className="field">
+                <label className="label">Password Confirmation</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password_confirmation"
+                    placeholder="eg: ••••••••"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.errors.password_confirmation && <small className="help is-danger">{this.state.errors.password_confirmation}</small>}
+              </div>
+              <div className="field">
+                <label className="label">Image</label>
 
-              <ReactFilestack
-                apikey= "AgpvNEP8WTweMRrNXxu7Mz"
-                buttonText="Upload Photo"
-                buttonClass="button"
-                className="upload-image"
-                options={options}
-                onSuccess={(result) => this.handleUploadImages(result)}
-                preload={true}
-              />
-              {this.state.formData.image &&
-                <figure className="image is-128x128">
-                  <img className="is-rounded" src={this.state.formData.image} />
-                  <br/>
-                </figure>
+                <ReactFilestack
+                  apikey= "AgpvNEP8WTweMRrNXxu7Mz"
+                  buttonText="Upload Photo"
+                  buttonClass="button"
+                  className="upload-image"
+                  options={options}
+                  onSuccess={(result) => this.handleUploadImages(result)}
+                  preload={true}
+                />
+                {this.state.formData.image &&
+                  <figure className="image is-128x128">
+                    <img className="is-rounded" src={this.state.formData.image} />
+                    <br/>
+                  </figure>
 
-              }
-            </div>
-            <button className="button">Submit</button>
-          </form>
+                }
+              </div>
+              <button className="button">Submit</button>
+            </form>
+          </div>
         </div>
       </section>
     )
