@@ -8,7 +8,7 @@ class ExerciseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Exercise
-        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects', 'likes',)
+        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects',)
 
 class SubjectSerializer(serializers.ModelSerializer):
 
@@ -28,7 +28,7 @@ class PopulatedExerciseSerializer(ExerciseSerializer):
     sketch = SketchSerializer()
     subjects = SubjectSerializer(many=True)
     class Meta(ExerciseSerializer.Meta):
-        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects', 'likes',)
+        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects',)
 
 class PopulateSubjectSerializer(SubjectSerializer):
 
