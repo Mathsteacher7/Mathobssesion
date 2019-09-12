@@ -41,6 +41,7 @@ class ContactUs extends React.Component {
         <div className="hero">
           <div className="column is-half is-offset-one-quarter">
             <div className="hero-body">
+              <h2 className="subtitle">Please send us a message with any feedback, comments or questions by completing the form below, and someone will get back in touch with you as soon as possible.</h2>
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
                   <label className="label">Full Name</label>
