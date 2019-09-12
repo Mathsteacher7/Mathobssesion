@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
-import logo2 from '../../images/logo2.png'
 import Auth from '../../lib/Auth'
 
 class Navbar extends React.Component {
@@ -50,7 +49,7 @@ class Navbar extends React.Component {
           <div className="navbar-brand">
 
             <Link to="/" className="navbar-item">
-              <img src={logo2}/>
+              <img src="https://i.imgur.com/yjQtGZp.png"/>
             </Link>
 
             <a

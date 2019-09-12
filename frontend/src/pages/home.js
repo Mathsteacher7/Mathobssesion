@@ -1,7 +1,5 @@
 import React from 'react'
 
-import logo from '../images/logo.png'
-
 const Home = () => {
   return (
     <section className="hero">
@@ -10,7 +8,7 @@ const Home = () => {
           <div className="columns is-multiline">
             <div className="column is">
               <figure className="image is-">
-                <img src={logo} />
+                <img src="https://i.imgur.com/GorgKIi.png" />
               </figure>
             </div>
             <div className="column">
@@ -21,7 +19,9 @@ const Home = () => {
                 <br/>
                 <h1 className="title is-1">Teacher's best friend</h1>
                 <br/>
-                <p className="subtitle">A unique website, where teachers can upload exercises and share them with other teachers. We want to give free access to teachers across the county to better exercises. <hr/> Feel free to add your favourite exercises, so together we will create the best database of exercises in the whole world.</p>
+                <p className="subtitle">A unique website, where teachers can upload exercises and share them with other teachers. We want to give free access to teachers across the county to better exercises.</p>
+                <hr/>
+                <p className="subtitle"> Feel free to add your favourite exercises, so together we will create the best database of exercises in the whole world.</p>
               </div>
             </div>
           </div>
