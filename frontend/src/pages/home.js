@@ -4,18 +4,25 @@ import logo from '../images/logo.png'
 
 const Home = () => {
   return (
-    <section className="hero is-large">
+    <section className="hero">
       <div className="hero-body">
         <div className="container">
-          <div className="column is-multiline">
-            <div className="column">
+          <div className="columns is-multiline">
+            <div className="column is">
               <figure className="image is-">
                 <img src={logo} />
               </figure>
             </div>
             <div className="column">
-              <h2 className="title is-2">Teacher's best friend</h2>
-              <p className="subtitle">Mathobsession is a unqiue website, where teachers can upload exercises and share them with other teachers. We want to give free access to teachers all accros the county to better exercises. <br/> Feel free to add your favorite exercises, so together we will create the best database of exercises in the whole world.</p>
+              <div className="container">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1 className="title is-1">Teacher's best friend</h1>
+                <br/>
+                <p className="subtitle">A unique website, where teachers can upload exercises and share them with other teachers. We want to give free access to teachers across the county to better exercises. <hr/> Feel free to add your favourite exercises, so together we will create the best database of exercises in the whole world.</p>
+              </div>
             </div>
           </div>
         </div>

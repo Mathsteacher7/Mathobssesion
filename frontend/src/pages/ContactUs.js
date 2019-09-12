@@ -37,61 +37,63 @@ class ContactUs extends React.Component {
 
   render() {
     return (
-
-      <section className='section'>
-        <div className='container'>
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Full Name</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="name"
-                  name="full_name"
-                  placeholder="eg: Fransisco Cohen"
-                  onChange={this.handleChange}
-                />
-              </div>
+      <section className="section">
+        <div className="hero">
+          <div className="column is-half is-offset-one-quarter">
+            <div className="hero-body">
+              <form onSubmit={this.handleSubmit}>
+                <div className="field">
+                  <label className="label">Full Name</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="name"
+                      name="full_name"
+                      placeholder="eg: Francisco Cohen"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Title</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="title"
+                      name="title"
+                      placeholder="eg: problem in ex. 2, Number"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="email"
+                      name="email"
+                      placeholder="eg: MathsTeacher@ga.com"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Message</label>
+                  <div className="control">
+                    <input
+                      className="textarea"
+                      type="text"
+                      name="content"
+                      placeholder="eg: The answer is not an Integer and it is might be too difficult for this level"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+                <button className="button">Send</button>
+              </form>
             </div>
-            <div className="field">
-              <label className="label">Title</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="title"
-                  name="title"
-                  placeholder="eg: problem in ex. 2, Number"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="email"
-                  name="email"
-                  placeholder="eg: MathsTeacher@ga.com"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Content</label>
-              <div className="control">
-                <input
-                  className="textarea"
-                  type="text"
-                  name="content"
-                  placeholder="eg: The answer is not an Integer and it is might be too difficult for this level"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <button className="button">Send</button>
-          </form>
-
+          </div>
         </div>
       </section>
 

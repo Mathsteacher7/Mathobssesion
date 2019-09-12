@@ -39,50 +39,43 @@ class ExercisesIndex extends React.Component {
 
   }
 
-  // console.log(this.state.data[4].subjects.map(s => s.name === 'Number'))
-
   render(){
     if (!this.state.data) return 'Loading...'
     return (
       <div className="section">
         <div className="container">
           <div className="columns is-multiline">
+            <div className="column is-2">
+              <h1 className="title is-3">Subject</h1>
+            </div>
             <div className="column">
-              <div className="field">
-                <label className="label">Subject</label>
-                <div className="control">
-                  <div className="select is-fullwidth">
-                    <Select
-                      name="subject"
-                      className="filter"
-                      options= {subjectList}
-                      defaultValue= {subjectList[0]}
-                      onChange={selected => this.handleSelectChange(selected, 'subject')}
-                      value={subjectList.find(option => option.label === this.state.subject)}>
-                    </Select>
-                  </div>
-                </div>
+              <div className="select">
+                <Select
+                  name="subject"
+                  className="filter"
+                  options= {subjectList}
+                  defaultValue= {subjectList[0]}
+                  onChange={selected => this.handleSelectChange(selected, 'subject')}
+                  value={subjectList.find(option => option.label === this.state.subject)}>
+                </Select>
               </div>
             </div>
-            {this.state.data && this.filterExercises().map(exercise =>
-              <div className="column" key={exercise.id}>
-                <div>
-                  <div className="card">
-                    <h2>{exercise.content}</h2>
-                    <hr/>
-                    <div>{exercise.subjects.map(subject => <div className="icon" key={subject.id} id={subject.name.replace(/\s/g, '')}/>)}</div>
-                  </div>
-                  <div className="column">
-                    {exercise.sketch && <figure className="image">
-                      <img
-                        src={exercise.sketch.url}
-                      />
-                    </figure>}
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
+          <div className="columns is-multiline">
+          </div>
+          {this.state.data && this.filterExercises().map(exercise =>
+            <div className="column" key={exercise.id}>
+              <div className="card">
+                <div className="card-header">
+                  <h2 className="card-header-title">{exercise.content}</h2>
+                </div>
+                <div className="card-content">{exercise.subjects.map(subject => <div className="icon" key={subject.id} id={subject.name.replace(/\s/g, '')}/>)}</div>
+                {exercise.sketch && <figure className="imageSketch">
+                  <img src={exercise.sketch.url} />
+                </figure>}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     )

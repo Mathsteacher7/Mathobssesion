@@ -19,18 +19,16 @@ class SubjectsIndex extends React.Component {
     return (
       <div className="section">
         <div className="container">
-          <h1 className="title is-2">Subjects</h1>
           <div className="columns is-multiline">
             {!this.state.subjects && <h2 className="title is-2">Loading...</h2>}
 
             {this.state.subjects && this.state.subjects.map(subject =>
-              <div className="column" key={subject.id}>
+              <div className="column is-4" key={subject.id}>
                 <Link to={`/subjects/${subject.name}`}>
                   <CardSubject {...subject} />
                 </Link>
               </div>
             )}
-
           </div>
         </div>
       </div>
