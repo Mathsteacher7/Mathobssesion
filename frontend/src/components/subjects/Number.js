@@ -2,10 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import StarRatings from 'react-star-ratings'
 
-// import CardExercise from '../exercises/card_exercise'
-
-
-
 class NumberIndex extends React.Component {
 
   constructor(){
@@ -16,6 +12,7 @@ class NumberIndex extends React.Component {
       subject: '',
       sortTerm: 'subject|asc'
     }
+
   }
 
   componentDidMount() {
@@ -39,8 +36,8 @@ class NumberIndex extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.data && this.state.data.map(exercise => <tr key={exercise.id}>
-                <td></td>
+              {this.state.data && this.state.data.map((exercise, index) => <tr key={exercise.id}>
+                <td>{index+1}</td>
                 <td>
                   {exercise.content} {exercise.sketch && <figure className="imageSketch">
                     <img src={exercise.sketch.url} alt={exercise.sketch.name}/>
