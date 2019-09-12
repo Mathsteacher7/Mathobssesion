@@ -39,8 +39,8 @@ class RatioAndProportionIndex extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.data && this.state.data.map(exercise => <tr key={exercise.id}>
-            <td></td>
+          {this.state.data && this.state.data.map((exercise, index) => <tr key={exercise.id}>
+            <td>{index+1}</td>
             <td>{exercise.content} {exercise.sketch && <figure className="image is-4by3">
               <img src={exercise.sketch.url} alt={exercise.sketch.name}/>
             </figure>}</td>
