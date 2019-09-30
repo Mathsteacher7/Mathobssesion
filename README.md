@@ -59,19 +59,31 @@ Mathobsession is a virtual community where teachers can find and share exercises
 ##### Example:
 ![My First Board (1)](https://user-images.githubusercontent.com/49660544/64786319-178ce180-d566-11e9-8a59-ba9819142eb2.jpg)
 
-* **Database Relationships** - We drew the Database relationships, as shown below. The MVP consisted of User, Exercise and Subject. Comments and Sub-subjects were extra features should time allowed. 
+* **Database Relationships** - Database relationships, as shown below. The MVP consisted of User, Exercise and Subject. Comments and Sub-subjects were extra features should time allowed. 
 
 ![My First Board](https://user-images.githubusercontent.com/49660544/64784841-f2e33a80-d562-11e9-9ff7-2f2c7f46bb56.jpg)
 
-* **Project set-up** - Together we created a repository on GitHub, ensured both computers were Git ready, and we also created a development branch. We also installed the different packages necessary to start the project - e.g. Django, PIPENV and more. 
+* **Project set-up** - Created a repository on GitHub, ensured both computers were Git ready, and we also created a development branch. We also installed the different packages necessary to start the project - e.g. Django, PIPENV and more. 
 
 #### Execution
 
-Backend 
-Frontend 
-Testing 
+### Backend 
 
-Future 
+### Frontend 
 
-Learnings to the next project 
-Future funtionality 
+### Testing 
+
+## The logic  and coding process
+
+## Wins and Blockers
+
+### Wins
+
+### Blockers
+
+
+## Future Content
+* Add Comments and Sub-subjects relationship to the database
+* 
+
+## What we learnt
