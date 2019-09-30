@@ -180,7 +180,9 @@ filterExercises(){
   }
 ```
 
-Ract Select was used to allow the user to choose the disareable sketch from the API 
+Ract Select was used to allow the user to choose the disareable sketch from the API.
+
+![Example of sketch](https://user-images.githubusercontent.com/51882532/65896541-4d72f800-e3a5-11e9-8086-8298ab5fc52d.png)
 
 
 
