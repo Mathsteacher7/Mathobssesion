@@ -283,7 +283,7 @@ Ract Select was used to allow the user to choose the disareable sketch from the 
 
 ## Future Content/Features
 * Add Comments and Sub-subjects relationship to the database,
-* Improve user profiles by connecting to an API which will further extend the Teacher profile by using information made available by the professional body TESS,
+* Improve user profiles by connecting to an API which will further extend the Teacher profile by using information made available by the professional body TES,
 * Create a section to allow students to use/complete the exercises and get live feedback.
 
 ## What we learnt
