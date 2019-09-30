@@ -68,9 +68,17 @@ Mathobsession is a virtual community where teachers can find and share exercises
 #### Execution
 ### Backend 
 
+* **Technology used - ** Django, Python and SQLite3
+
+* **Approach** 
+** Started by creating the models 
+
+
+
+
 ### Frontend 
 
-### Testing 
+
 
 
 ## Wins and Blockers
