@@ -216,9 +216,12 @@ Ract Select was used to allow the user to choose the disareable sketch from the 
 
 ## Wins and Blockers
 ### Wins
-* 
+* MVP achieved whitin planed timescales which allowed us to work on extra features,
+* Create a filter that allows the user to filter exercises by more than one subject, mapping over a nested array,
+* Enabled the user to add sketches to exercises in a user friendly way,
 
 ### Blockers
+*  Upload exercises in a different way than a string. This would have improved how the exercises are displayed afterwards. 
 
 
 ## Future Content
