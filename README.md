@@ -68,7 +68,7 @@ Mathobsession is a virtual community where teachers can find and share exercises
 #### Execution
 ### Backend 
 
-* **Technology used -** Django, Python and SQLite3
+**Technology used -** Django, Python and SQLite3
 
 **Approach used** 
 * Started by creating the models 
@@ -154,7 +154,7 @@ To enhance the user experience we created a database of sketches which the user 
 
 ### Authentication 
 
-* **Technology used -** Django, Python and SQLite3
+**Technology used -** Django, Python and SQLite3
 
 **Approach used** 
 * Started by extending the abstractuser
@@ -215,7 +215,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 ### Frontend 
 
-* **Technology used -** React and Bulma
+**Technology used -** React and Bulma
 
 **Approach used** 
 * New Exercise page allows the user to save a exercise to the the database. In here the input fields vary from pre-populated such as drop-down list from React Select and textarea.
