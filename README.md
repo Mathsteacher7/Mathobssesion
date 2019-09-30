@@ -66,18 +66,16 @@ Mathobsession is a virtual community where teachers can find and share exercises
 * **Project set-up** - Created a repository on GitHub, ensured both computers were Git ready, and we also created a development branch. We also installed the different packages necessary to start the project - e.g. Django, PIPENV and more. 
 
 #### Execution
-
 ### Backend 
 
 ### Frontend 
 
 ### Testing 
 
-## The logic  and coding process
 
 ## Wins and Blockers
-
 ### Wins
+* MVP
 
 ### Blockers
 
