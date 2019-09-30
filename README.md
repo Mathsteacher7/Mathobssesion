@@ -71,8 +71,7 @@ Mathobsession is a virtual community where teachers can find and share exercises
 * **Technology used -** Django, Python and SQLite3
 
 * **Approach used** 
-** Started by creating the models 
-
+* Started by creating the models 
 ```py
 class Subject(models.Model):
     name = models.CharField(max_length=25)
@@ -101,6 +100,34 @@ class Exercise(models.Model):
         return f'{self.content} level {self.level}'
 ```
 
+* Followed by view components to:
+  * Exercise List 
+  * Exercise Detail
+  * Subject List
+  * Subject Detail
+  * Sketch List 
+  * Sketch Detail
+  * User Profile
+  * Contact Us
+  
+```py
+class ExerciseDetailView(APIView):
+​
+    def get(self, _request, pk):
+        exercise = Exercise.objects.get(pk=pk)
+        serializer = PopulatedExerciseSerializer(exercise)
+        return Response(serializer.data)
+​
+    def put(self, request, pk):
+        exercise = Exercise.objects.get(pk=pk)
+        serializer = ExerciseSerializer(exercise, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=422)
+```
+
+* Followed by Serializers
 
 ### Frontend 
 
