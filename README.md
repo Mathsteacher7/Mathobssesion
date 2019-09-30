@@ -70,7 +70,7 @@ Mathobsession is a virtual community where teachers can find and share exercises
 
 * **Technology used -** Django, Python and SQLite3
 
-* **Approach used** 
+**Approach used** 
 * Started by creating the models 
 ```py
 class Subject(models.Model):
@@ -128,8 +128,7 @@ class ExerciseDetailView(APIView):
         return Response(serializer.errors, status=422)
 ```
 
-* Followed by Serializers
-In the model we have a many to many relationship between the Subject and the Exercise. For that we needed to create two serializer for each one of them, we will explain with the exercise serializers
+* Followed by Serializers - In the model we have a many to many relationship between the Subject and the Exercise. For that we needed to create two serializer for each one of them, we will explain with the exercise serializers
 ```py
 class ExerciseSerializer(serializers.ModelSerializer):
 ​
@@ -155,11 +154,70 @@ To enhance the user experience we created a database of sketches which the user 
 
 ### Authentication 
 
+* **Technology used -** Django, Python and SQLite3
+
+**Approach used** 
+* Started by extending the abstractuser
+
+```py
+class User(AbstractUser):
+    # custom fields here...
+    image = models.CharField(max_length=200)
+    type = models.CharField(max_length=20)
+    area = models.CharField(max_length=20)
+```
+
+* Followed by view components to:
+  * Register
+  * Login
+  
+```py
+class RegisterView(APIView):
+
+    def post(self, request):
+        print(request.data)
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Registration successful'})
+
+        return Response(serializer.errors, status=422)
+```
+
+* Followed by Serializers
+
+```py
+class UserSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField(write_only=True)
+    password_confirmation = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+
+        password = data.pop('password')
+        password_confirmation = data.pop('password_confirmation')
+
+        if password != password_confirmation:
+            raise serializers.ValidationError({'password_confirmation': 'Passwords do not match'})
+
+        try:
+            validations.validate_password(password=password)
+        except ValidationError as err:
+            raise serializers.ValidationError({'password': err.messages})
+
+        data['password'] = make_password(password)
+        return data
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password', 'password_confirmation', 'image', 'first_name', 'last_name', 'type', 'area', 'id',)
+```
 
 ### Frontend 
 
 * **Technology used -** React and Bulma
 
+**Approach used** 
 * New Exercise page allows the user to save a exercise to the the database. In here the input fields vary from pre-populated such as drop-down list from React Select and textarea.
 
 ```js
@@ -218,14 +276,18 @@ Ract Select was used to allow the user to choose the disareable sketch from the 
 ### Wins
 * MVP achieved whitin planed timescales which allowed us to work on extra features,
 * Create a filter that allows the user to filter exercises by more than one subject, mapping over a nested array,
-* Enabled the user to add sketches to exercises in a user friendly way,
+* Enabled the user to add sketches to exercises in a user friendly way.
 
 ### Blockers
 *  Upload exercises in a different way than a string. This would have improved how the exercises are displayed afterwards. 
 
-
-## Future Content
-* Add Comments and Sub-subjects relationship to the database
-* 
+## Future Content/Features
+* Add Comments and Sub-subjects relationship to the database,
+* Improve user profiles by connecting to an API which will further extend the Teacher profile by using information made available by the professional body TESS,
+* Create a section to allow students to use/complete the exercises and get live feedback.
 
 ## What we learnt
+* The benefits of using a SQLite database, 
+* Understanding the functionality of Django, CRUD functionality and different relationships,
+* Embedded Python, single page app with React and the use of Bulma,
+* Importance of breaking down a problem and solving one issue at a time.
