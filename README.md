@@ -109,7 +109,8 @@ class Exercise(models.Model):
   * Sketch Detail
   * User Profile
   * Contact Us
-  
+ 
+Example:
 ```py
 class ExerciseDetailView(APIView):
 ​
