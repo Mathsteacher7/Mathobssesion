@@ -160,13 +160,43 @@ To enhance the user experience we created a database of sketches which the user 
 
 * **Technology used -** React and Bulma
 
-New Exercise
+* New Exercise page allows the user to save a exercise to the the database. In here the input fields vary from pre-populated such as drop-down list from React Select and textarea.
 
-The Exercise Index page consumes an API
+```js
+handleSubmit(e) {
+    e.preventDefault()
+    const token = Auth.getToken()
+    axios.post(('/api/exercises/'), this.state.formData, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(() => this.props.history.push('/exercises'))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
+  }
+```
 
+* The Exercise Index shows all exercises in the database and renders each exercise in a card. 
 
+```js
+componentDidMount() {
+  axios.get('/api/exercises/')
+    .then(res => this.setState({ data: res.data }))
+}
+{this.state.data && this.filterExercises().map(exercise =>
+          <div className="column" key={exercise.id}>
+            <div className="card">
+              <div className="card-header">
+                <h2 className="card-header-title">{exercise.content}</h2>
+              </div>
+              <div className="card-content">{exercise.subjects.map(subject => <div className="icon" key={subject.id} id={subject.name.replace(/\s/g, '')}/>)}</div>
+              {exercise.sketch && <figure className="imageSketch">
+                <img src={exercise.sketch.url} />
+              </figure>}
+            </div>
+          </div>
+        )}
+```
 
-We felt that it was important fot the user to be able to filter Exercises by Subject therefore we created the filter below which sits in the Index page. 
+* We felt that it was important fot the user to be able to filter Exercises by Subject therefore we created the filter below which sits in the Index page. 
 
 ```js
 filterExercises(){
@@ -184,11 +214,9 @@ Ract Select was used to allow the user to choose the disareable sketch from the 
 
 ![Example of sketch](https://user-images.githubusercontent.com/51882532/65896541-4d72f800-e3a5-11e9-8086-8298ab5fc52d.png)
 
-
-
 ## Wins and Blockers
 ### Wins
-* MVP
+* 
 
 ### Blockers
 
