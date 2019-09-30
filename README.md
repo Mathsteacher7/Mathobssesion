@@ -129,9 +129,58 @@ class ExerciseDetailView(APIView):
 ```
 
 * Followed by Serializers
+In the model we have a many to many relationship between the Subject and the Exercise. For that we needed to create two serializer for each one of them, we will explain with the exercise serializers
+```py
+class ExerciseSerializer(serializers.ModelSerializer):
+​
+    user = UserSerializer(read_only=True)
+​
+    class Meta:
+        model = Exercise
+        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects',)
+​
+class PopulatedExerciseSerializer(ExerciseSerializer):
+​
+    sketch = SketchSerializer()
+    subjects = SubjectSerializer(many=True)
+    class Meta(ExerciseSerializer.Meta):
+        fields = ('id', 'content', 'level', 'user', 'sketch', 'subjects',)
+```
+ExerciseSerializer only constains the id field of the Subject Model while PopulatedExerciseSerializer contains all fields of the Subject Model. That was necessary to avoid an infinity loop when of Exercise - Subject - Exercise - etc. 
+
+* Sketches database
+
+To enhance the user experience we created a database of sketches which the user could choose from when uploading a new exercise. 
+
+
+### Authentication 
+
 
 ### Frontend 
 
+* **Technology used -** React and Bulma
+
+New Exercise
+
+The Exercise Index page consumes an API
+
+
+
+We felt that it was important fot the user to be able to filter Exercises by Subject therefore we created the filter below which sits in the Index page. 
+
+```js
+filterExercises(){
+    const [field, order] = this.state.sortTerm.split('|')
+    const filtered = _.filter(this.state.data, data => {
+      const chosenState = this.state.subject
+      return (this.state.subject ? new RegExp(chosenState).test(data.subjects.map(s => s.name)) : true)
+    })
+    return _.orderBy(filtered, [field], [order])
+
+  }
+```
+
+Ract Select was used to allow the user to choose the disareable sketch from the API 
 
 
 
