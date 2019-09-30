@@ -38,6 +38,7 @@ Mathobsession is a virtual community where teachers can find and share exercises
 * Django
 * Python
 * Heroku
+* SQLite3
 
 ### Approach Taken
 
